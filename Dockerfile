@@ -8,6 +8,7 @@ RUN apt-get update &&\
     apt-get install nginx gettext-base unzip wget -y &&\
     wget https://github.com/mayswind/AriaNg/releases/download/${ARIANG_VERSION}/AriaNg-${ARIANG_VERSION}.zip -o ariang.zip &&\
     rm -r /var/www/html && mkdir /var/www/html &&\
+    systemctl disable nginx && systemctl stop nginx &&\
     unzip -o ariang.zip -d /var/www/html
 
 COPY startup.sh .
