@@ -5,7 +5,7 @@ ENV ARIANG_VERSION=1.1.1
 VOLUME [ "/config" ]
 
 RUN apt-get update &&\
-    apt-get install nginx gettext-base unzip wget -y &&\
+    apt-get install nginx gettext-base unzip wget ca-certificates -y &&\
     wget https://github.com/mayswind/AriaNg/releases/download/${ARIANG_VERSION}/AriaNg-${ARIANG_VERSION}.zip -o ariang.zip &&\
     rm -r /var/www/html && mkdir /var/www/html &&\
     systemctl disable nginx && systemctl stop nginx &&\
