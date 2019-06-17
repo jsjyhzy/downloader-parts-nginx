@@ -1,7 +1,7 @@
 server{
     server_name _;
     listen 80;
-    reslover 127.0.0.11;
+    resolver 127.0.0.11;
 
     location =/jsonrpc {
         proxy_pass              http://${ARIA2}/jsonrpc;
